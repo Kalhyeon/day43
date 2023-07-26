@@ -1,0 +1,30 @@
+### static ###
+1. this
+	- 객체 자신을 의미하는 키워드
+		class Apple {}
+		Apple a1 = new Apple(); // new 하는 순간에 this 가 생성된다.
+		Apple a2 = new Apple();
+
+2. static : 객체 소속이 아니라 클래스 소속
+	class Apple {
+		static String category = "사과";
+		...
+	}
+	// 객체가 없어도 접근이 가능하다 => this 를 사용할 수 없다.
+	// static 은 this 와 관련이 없다
+	System.out.println(Apple.Category);
+
+3. class Apple {
+ 		static String category = "사과";
+ 		int price = 3000;
+ 		public static 정적메소드() {
+ 		 	System.out.println(Apple.Category);
+ 		 	// 오류 발생하는 이유 : static 은 static 끼리만 접근할 수 있다.
+ 		 	// price 는 필드라, 객체마다 존재해서 10개 있으면 10개 다 생성해야한다.
+ 		 	// member 에 접근할 때 member 와 구분하기 위하여 this 가 존재해야한다.
+ 		 	System.out.println(this.price);
+ 		 	
+ 		}
+ 		 
+    }	
+	 
